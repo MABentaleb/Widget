@@ -1,0 +1,41 @@
+{
+  "name": "RAINBOW 2 - Widget",
+  "version": "1.0.0",
+  "description": "New widget for new RL40 PLC",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Groupe-SERAP/RL40-Widget.git"
+  },
+  "author": "SERAP Industries",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Groupe-SERAP/RL40-Widget/issues"
+  },
+  "homepage": "https://github.com/Groupe-SERAP/RL40-Widget#readme",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-rpm": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+    "@electron-forge/plugin-fuses": "^7.4.0",
+    "@electron-forge/publisher-github": "^7.4.0",
+    "@electron/fuses": "^1.8.0",
+    "@electron/rebuild": "^3.6.0",
+    "electron": "^29.3.0",
+    "electron-reloader": "^1.2.3"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "node-opcua": "^2.124.0"
+  }
+}

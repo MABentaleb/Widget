@@ -1,0 +1,332 @@
+@font-face {
+    font-family: 'Clash Display';
+    src: url("../assets/fonts/ClashDisplay-Variable.ttf");
+    font-weight: 200 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url("../assets/fonts/Archivo-Variable.ttf");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+body {
+    background-image: url('../assets/img/serap_background.svg');
+    background-size: cover;
+    background-color: #f9f9f9;
+    background-repeat: no-repeat; /* ou toute autre couleur de fond souhaitée */
+    height: 100%;
+    width: 100%;
+    padding-top: 20vh;
+    padding-left: 6vw;
+    padding-bottom: 16vh;
+    padding-right: 19vw;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.container, .table-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Pour aligner les éléments verticalement au début du conteneur */
+    align-items: flex-start; /* Pour aligner horizontalement au début */
+    height: 100%;
+    width: 100%;
+    position: relative; /* Ajouté pour le positionnement absolu des contrôles */
+    overflow-y: auto;
+}
+
+.remote-access-container {
+    display: flex;
+    flex-direction: column; /* Les éléments s'affichent maintenant en ligne */
+    justify-content: center; /* Centrage horizontal des boutons */
+    align-items: center; /* Centrage vertical des boutons */
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow-y: auto; /* Vous pouvez également envisager de supprimer cette ligne si le défilement n'est pas nécessaire */
+}
+
+.container::-webkit-scrollbar, .table-container::-webkit-scrollbar {
+    display: block;
+    width: 0.5vw;
+}
+
+/* Personnalisation du style de la barre de défilement */
+.container::-webkit-scrollbar-thumb,
+.table-container::-webkit-scrollbar-thumb {
+    background-color: darkgrey; /* ou la couleur souhaitée */
+    border-radius: 4px; /* ou le rayon souhaité */
+}
+
+.container::-webkit-scrollbar-track,
+.table-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* ou la couleur souhaitée */
+}
+
+.no-tank-to-display {
+    text-align: center;
+    width: 100%;
+    font-family: "Clash Display", sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.fa-circle-xmark {
+    color: red;
+}
+
+.fa-fill, .fa-temperature-half, .fa-power-off, .fa-clock-rotate-left, .fa-gear, .fa-wifi {
+    color: #323232;
+}
+
+.fa-clock-rotate-left, .fa-gear, .fa-wifi {
+    font-size: 1.7em;
+}
+
+.box-title {
+    font-family: "Clash Display", sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    color: #323232;
+}
+
+.tank-infos {
+    font-family: "Clash Display", sans-serif;
+    font-weight: 400;
+}
+
+.tank-item-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 1.5vh;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.tank-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.tank-history, .tank-settings, .tank-remote-access {
+    cursor: pointer;
+}
+
+.widget-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    position: absolute;
+    top: 0;  
+    right: 0;  
+    margin-right: 0.55vw; 
+    margin-top: 19vh;  
+}
+
+.widget-home-btn {
+    background-image: url("../assets/img/serap_bouton_accueil.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 85px;
+    height: 85px;
+    margin-bottom: 1.5vh;
+    cursor: pointer;
+}
+
+.widget-add-btn {
+    background-image: url("../assets/img/serap_bouton_plus.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 85px;
+    height: 85px;
+    margin-bottom: 1.5vh;
+    cursor: pointer;
+}
+
+.widget-settings-btn {
+    background-image: url("../assets/img/serap_bouton_params.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 85px;
+    height: 85px;
+    margin-bottom: 1.2vh;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.widget-excel-btn {
+    background-image: url("../assets/img/serap_bouton_excel.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 85px;
+    height: 85px;
+    margin-bottom: 1.5vh;
+    cursor: pointer;
+}
+
+.widget-delete-btn {
+    background-image: url("../assets/img/serap_bouton_supprimer.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 85px;
+    height: 85px;
+    margin-bottom: 1.5vh;
+    cursor: pointer;
+}
+
+.widget-stop-button {
+    background-image: url("../assets/img/serap_bouton_stop.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 75px;
+    width: 85px;
+    height: 85px;
+    cursor: pointer;
+}
+
+.widget-cold-button {
+    background-image: url("../assets/img/serap_bouton_froid.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 75px;
+    width: 85px;
+    height: 85px;
+    cursor: pointer;
+}
+
+.widget-agitation-button {
+    background-image: url("../assets/img/serap_bouton_agitation.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 75px;
+    width: 85px;
+    height: 85px;
+    cursor: pointer;
+}
+
+.widget-washing-button {
+    background-image: url("../assets/img/serap_bouton_lavage.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 85px;
+    height: 85px;
+    cursor: pointer;
+}
+
+.my-rainbow-logo {
+    position: absolute;
+    right: 0.6vw;
+    bottom: 1vh;
+    width: 125px;
+    height: auto;
+}
+
+.my-rainbow-logo img {
+    width: 100%;
+    height: auto;
+}
+
+.history-header {
+    font-size: 1em;
+    font-family: "Clash Display", sans-serif;
+}
+
+.history-body {
+    font-size: 0.9em;
+    font-family: "Archivo", sans-serif;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: white !important;
+}
+
+.align-right {
+    text-align: right !important;
+}
+
+.form-label {
+    font-family: "Clash Display", sans-serif;
+    font-size: 1em;
+    color: #323232;
+}
+
+.font-for-input {
+    font-family: "Archivo", sans-serif;
+    color: #323232;
+}
+
+.font-for-input::placeholder {
+    font-family: "Archivo", sans-serif;
+}
+
+.blue-for-button {
+    background-color: #29BDEF;
+    color: white;
+}
+
+.blue-for-button:hover {
+    background-color: #1f9edc;
+    color: white;
+}
+
+.red-for-button {
+    background-color: #FF0000;
+    color: white;
+}
+
+.red-for-button:hover {
+    background-color: #d80000;
+    color: white;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5em;
+}
+
+.widget-mode, .widget-temperature {
+    font-family: 'Clash Display', sans-serif;
+    font-size: 1.5em;
+}
+
+.widget-timer {
+    font-family: 'Archivo', sans-serif;
+    font-size: 1em;
+    margin-top: 2em;
+}
+
+.space-between-buttons {
+    margin-right: 1vw;
+}

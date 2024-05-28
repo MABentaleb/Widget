@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html data-theme="light">
+  <head>
+    <meta charset="UTF-8">
+    <meta 
+      http-equiv="Content-Security-Policy" 
+      content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://kit.fontawesome.com https://cdn.sheetjs.com;
+        style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://ka-f.fontawesome.com;
+        connect-src 'self' https://ka-f.fontawesome.com;
+        img-src 'self' data:;
+        font-src 'self' https://ka-f.fontawesome.com;
+    ">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+    >
+    <script src="https://kit.fontawesome.com/b10766614f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="../style/style.css">
+    <title>Rainbow 2 - Widget</title>
+  </head>
+  <body>
+    <div class="box-title" id="remote-access-title"></div>
+    <div class="remote-access-container" id="remote-access-container">
+        <button class="button is-large is-fullwidth" id="remote-access-request-btn">
+            <span class="icon">
+                <i class="fas fa-wifi"></i>
+            </span>
+            <span style="margin: .3em 0 .3em 1.5em;" id="button-text-span">Demander l'accès à la cuve</span>
+        </button>
+    </div>
+    <div class="widget-controls">
+        <a href="index.html" id="remote-access-home-button">
+            <div class="widget-home-btn" aria-label="Retour au menu principal"></div>
+        </a>
+    </div>
+    <script src='../scripts/remote-access.js'></script>
+  </body>
+</html>

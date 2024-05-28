@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html data-theme="light">
+  <head>
+    <meta charset="UTF-8">
+    <meta 
+      http-equiv="Content-Security-Policy" 
+      content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://kit.fontawesome.com;
+        style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://ka-f.fontawesome.com;
+        connect-src 'self' https://ka-f.fontawesome.com;
+        img-src 'self' data:;
+        font-src 'self' https://ka-f.fontawesome.com;
+    ">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/b10766614f.js" crossorigin="anonymous"></script>
+    <script src="../scripts/index.js"></script>
+    <link rel="stylesheet" href="../style/style.css">
+    <title>Rainbow 2 - Widget</title>
+  </head>
+  <body>
+    <div class="container" id="tank-infos-container">
+      <div class="no-tank-to-display">
+        Aucune cuve n'a encore été ajoutée.
+        <br>
+        Pour ajouter une cuve, cliquez sur le bouton "+" à droite.
+      </div>
+    </div>
+    <div class="widget-controls">
+      <div class="widget-home-btn" aria-label="Retour au menu principal"></div>
+      <button class="add-new-tank-modal-trigger" data-target="add-new-tank-modal">
+        <div class="widget-add-btn" aria-label="Ajouter une cuve"></div>
+      </button>
+      <button class="app-settings-modal-trigger" data-target="app-settings-modal">
+      <div class="widget-settings-btn" aria-label="Paramètres"></div>
+      </button>    </div>
+    <div class="my-rainbow-logo">
+      <img src="../assets/img/Logo_MyRBW_blanc.png" alt="MyRainbow logo">
+    </div>
+
+    <!-- ADD A NEW TANK MODAL  -->
+    <div id="add-new-tank-modal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <div class="box-title">Ajout d'une cuve</div>
+        </header>
+        <section class="modal-card-body">
+          <div class="field">
+            <label class="label form-label">Nom de la cuve</label>
+            <div class="control">
+              <input class="input font-for-input" type="text" placeholder="Nom de la cuve" id="tank-name" oninput="this.value = this.value.toUpperCase();">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label form-label">Adresse IP de votre appareil</label>
+            <div class="control">
+              <input class="input font-for-input" type="text" id="ip-addr" placeholder="Exemple : 192.168.0.0">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label form-label">Synchronisation (en s)</label>
+            <div class="control">
+              <input class="input font-for-input" type="number" id="synchro" value="10">
+            </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <div class="buttons">
+            <button class="button is-success blue-for-button" id="adding-new-tank" type="button">Ajouter</button>
+            <button class="button button-close">Annuler</button>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- APP SETTINGS -->
+    <div id="app-settings-modal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <div class="box-title">Paramètres de l'application</div>
+        </header>
+        <section class="modal-card-body">
+          <div class="field">
+            <label class="label form-label">Ouverture de l'application au démarrage de Windows</label>
+            <div class="control">
+              <label class="checkbox">
+                <input type="checkbox" id="open-at-startup">
+                Oui
+              </label>
+            </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <div class="buttons">
+            <button class="button is-success blue-for-button" id="app-settings-validation" type="button">Valider</button>
+            <button class="button button-close">Annuler</button>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src='../renderer.js'></script>
+  </body>
+</html>
